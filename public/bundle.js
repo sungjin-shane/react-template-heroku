@@ -118,7 +118,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 // import Button from 'react-bootstrap/lib/Button'
 
 
-//import Button from 'react-bootstrap'
+// import Button from 'react-bootstrap'
 
 var App = function (_React$Component) {
   _inherits(App, _React$Component);
@@ -139,11 +139,34 @@ var App = function (_React$Component) {
         'div',
         null,
         _react2.default.createElement(
-          _reactstrap.Button,
-          { color: 'danger' },
-          'Danger!'
-        ),
-        'start'
+          _reactstrap.Jumbotron,
+          null,
+          _react2.default.createElement(
+            'h1',
+            { className: 'display-3' },
+            'Hello, world!'
+          ),
+          _react2.default.createElement(
+            'p',
+            { className: 'lead' },
+            'This is a simple hero unit, a simple Jumbotron-style component for calling extra attention to featured content or information.'
+          ),
+          _react2.default.createElement('hr', { className: 'my-2' }),
+          _react2.default.createElement(
+            'p',
+            null,
+            'It uses utility classes for typography and spacing to space content out within the larger container.'
+          ),
+          _react2.default.createElement(
+            'p',
+            { className: 'lead' },
+            _react2.default.createElement(
+              _reactstrap.Button,
+              { color: 'primary' },
+              'Learn More'
+            )
+          )
+        )
       );
     }
   }]);
