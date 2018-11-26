@@ -108,6 +108,10 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactstrap = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/dist/reactstrap.es.js");
 
+var _NavMenu = __webpack_require__(/*! ./NavMenu */ "./client/components/NavMenu.jsx");
+
+var _NavMenu2 = _interopRequireDefault(_NavMenu);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -117,8 +121,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 // import Button from 'react-bootstrap/lib/Button'
 
-
-// import Button from 'react-bootstrap'
 
 var App = function (_React$Component) {
   _inherits(App, _React$Component);
@@ -138,35 +140,7 @@ var App = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement(
-          _reactstrap.Jumbotron,
-          null,
-          _react2.default.createElement(
-            'h1',
-            { className: 'display-3' },
-            'Hello, world!'
-          ),
-          _react2.default.createElement(
-            'p',
-            { className: 'lead' },
-            'This is a simple hero unit, a simple Jumbotron-style component for calling extra attention to featured content or information.'
-          ),
-          _react2.default.createElement('hr', { className: 'my-2' }),
-          _react2.default.createElement(
-            'p',
-            null,
-            'It uses utility classes for typography and spacing to space content out within the larger container.'
-          ),
-          _react2.default.createElement(
-            'p',
-            { className: 'lead' },
-            _react2.default.createElement(
-              _reactstrap.Button,
-              { color: 'primary' },
-              'Learn More'
-            )
-          )
-        )
+        _react2.default.createElement(_NavMenu2.default, null)
       );
     }
   }]);
@@ -175,6 +149,140 @@ var App = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = App;
+
+/***/ }),
+
+/***/ "./client/components/NavMenu.jsx":
+/*!***************************************!*\
+  !*** ./client/components/NavMenu.jsx ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactstrap = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/dist/reactstrap.es.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var NavMenu = function (_React$Component) {
+  _inherits(NavMenu, _React$Component);
+
+  function NavMenu(props) {
+    _classCallCheck(this, NavMenu);
+
+    var _this = _possibleConstructorReturn(this, (NavMenu.__proto__ || Object.getPrototypeOf(NavMenu)).call(this, props));
+
+    _this.state = {
+      isOpen: false
+    };
+    _this.toggle = _this.toggle.bind(_this);
+    return _this;
+  }
+
+  _createClass(NavMenu, [{
+    key: 'toggle',
+    value: function toggle() {
+      this.setState({
+        isOpen: !this.state.isOpen
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          _reactstrap.Navbar,
+          { color: 'dark', dark: true, expand: 'md' },
+          _react2.default.createElement(
+            _reactstrap.NavbarBrand,
+            { href: '/' },
+            'reactstrap'
+          ),
+          _react2.default.createElement(_reactstrap.NavbarToggler, { onClick: this.toggle }),
+          _react2.default.createElement(
+            _reactstrap.Collapse,
+            { isOpen: this.state.isOpen, navbar: true },
+            _react2.default.createElement(
+              _reactstrap.Nav,
+              { className: 'ml-auto', navbar: true },
+              _react2.default.createElement(
+                _reactstrap.NavItem,
+                null,
+                _react2.default.createElement(
+                  _reactstrap.NavLink,
+                  { href: '/components/' },
+                  'Components'
+                )
+              ),
+              _react2.default.createElement(
+                _reactstrap.NavItem,
+                null,
+                _react2.default.createElement(
+                  _reactstrap.NavLink,
+                  { href: 'https://github.com/reactstrap/reactstrap' },
+                  'GitHub'
+                )
+              ),
+              _react2.default.createElement(
+                _reactstrap.UncontrolledDropdown,
+                { nav: true, inNavbar: true },
+                _react2.default.createElement(
+                  _reactstrap.DropdownToggle,
+                  { nav: true, caret: true },
+                  'Options'
+                ),
+                _react2.default.createElement(
+                  _reactstrap.DropdownMenu,
+                  { right: true },
+                  _react2.default.createElement(
+                    _reactstrap.DropdownItem,
+                    null,
+                    'Option 1'
+                  ),
+                  _react2.default.createElement(
+                    _reactstrap.DropdownItem,
+                    null,
+                    'Option 2'
+                  ),
+                  _react2.default.createElement(_reactstrap.DropdownItem, { divider: true }),
+                  _react2.default.createElement(
+                    _reactstrap.DropdownItem,
+                    null,
+                    'Reset'
+                  )
+                )
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return NavMenu;
+}(_react2.default.Component);
+
+exports.default = NavMenu;
 
 /***/ }),
 
